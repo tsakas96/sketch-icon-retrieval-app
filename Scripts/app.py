@@ -14,7 +14,8 @@ import SessionState
 
 @st.cache
 def initialize_model():
-    weights_path_sketch = "Weights/"
+    #weights_path_sketch = "Weights/"
+    weights_path_sketch = "./Scripts/Weights/"
     sketchClassificationModel = googlenet(66)
     sketchClassificationModel.load_weights(weights_path_sketch + 'sketchTripletWithCWI')
     return sketchClassificationModel
