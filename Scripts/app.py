@@ -70,8 +70,10 @@ canvas_result = st_canvas(
 )
 result_btn = st.button("Search")
 
-icon_info = np.load("icon_info.npy")
-icon_features = np.load("icon_features.npy")
+# icon_info = np.load("icon_info.npy")
+icon_info = np.load("./Scripts/icon_info.npy", allow_pickle=True)
+# icon_features = np.load("icon_features.npy")
+icon_features = np.load("./Scripts/icon_features.npy", allow_pickle=True)
 sketchClassificationModel = initialize_model()
 session_state = SessionState.get(top_10_icons = [])
 
