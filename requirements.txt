@@ -30,3 +30,4 @@ google-pasta==0.2.0
 google-resumable-media==1.2.0
 googleapis-common-protos==1.53.0
 PyJWT==2.0.1
+timm
