@@ -15,8 +15,8 @@ from CFG import *
 
 @st.cache
 def initialize_model():
-    weights_path_sketch = "Train Weights-CLIP/"
-    # weights_path_sketch = "./Scripts/Weights/"
+    #weights_path_sketch = "Train Weights-CLIP/"
+    weights_path_sketch = "./Scripts/Weights/"
     sketchClassificationModel = CLIPModel().to(CFG.device)
     sketchClassificationModel.load_state_dict(torch.load(weights_path_sketch + "ClipModel.pt", map_location=CFG.device))
     sketchClassificationModel.eval()
@@ -77,10 +77,10 @@ canvas_result = st_canvas(
 )
 result_btn = st.button("Search")
 
-icon_info = np.load("icon_info_clip.npy")
-# icon_info = np.load("./Scripts/icon_info.npy", allow_pickle=True)
-icon_features = np.load("icon_features_clip.npy")
-# icon_features = np.load("./Scripts/icon_features_clip.npy", allow_pickle=True)
+# icon_info = np.load("icon_info_clip.npy")
+icon_info = np.load("./Scripts/icon_info.npy", allow_pickle=True)
+# icon_features = np.load("icon_features_clip.npy")
+icon_features = np.load("./Scripts/icon_features_clip.npy", allow_pickle=True)
 sketchClassificationModel = initialize_model()
 session_state = SessionState.get(top_10_icons = [])
 
